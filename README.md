@@ -12,4 +12,4 @@ Esse processo é muito importante em vários cenários, ninguém discorda disso.
 
 # Beleza, como isso me ajuda? 
 
-Simples. Imagine o seu processo de gestão de mudanças a nível de código de aplicação, scripts de automação, ou receitas de IaC sendo automaticamente gerados dentro do seu Pipeline de entrega, evitando processos manuais, revisão, escrita de procedimentos e etc. Sonho, né? Imagine tudo isso disponibilizado por meio de uma API REST. Muito Top! É isso que tentaremos fazer aqui! 
+Simples. Imagine o seu processo de gestão de mudanças a nível de código de aplicação, scripts de automação, ou receitas de IaC sendo automaticamente gerados dentro do seu Pipeline de entrega, evitando processos manuais, revisão, escrita de procedimentos e etc. Sonho, né? Imagine tudo isso disponibilizado por meio de uma API REST. Muito Top! É isso que tentaremos fazer aqui! Deixe o Jenkins fazer o seu trabalho! 
