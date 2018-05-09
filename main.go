@@ -1,22 +1,31 @@
 package main
 
 import (
-	"github.com/kataras/iris"
+	"net/http"
+
+	"github.com/labstack/echo"
+	"github.com/labstack/echo/middleware"
 )
 
-var addr = iris.Addr("0.0.0.0:3000")
+func createGMUD(c echo.Context) error {
+	return c.JSON(http.StatusCreated, "olá")
+}
+
+func healthcheck(c echo.Context) error {
+	return c.JSON(http.StatusCreated, "ok")
+}
 
 func main() {
-	app := iris.New()
-	app.Get("/healthcheck", healthcheck)
-	app.Post("/gmud", gmud)
-	app.Run(addr)
-}
+	e := echo.New()
 
-func healthcheck(ctx iris.Context) {
-	ctx.JSON(iris.Map{"status": 200})
-}
+	// Middleware
+	e.Use(middleware.Logger())
+	e.Use(middleware.Recover())
 
-func gmud(ctx iris.Context) {
-	ctx.JSON(iris.Map{"feature": "create GMUD PDF"})
+	// Routes
+	e.POST("/gmud", createGMUD)
+	e.GET("/", healthcheck)
+
+	// Start server
+	e.Logger.Fatal(e.Start(":3000"))
 }
